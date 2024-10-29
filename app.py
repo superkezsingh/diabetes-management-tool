@@ -61,5 +61,7 @@ def get_management_plan():
         print("Error with OpenAI API call:", e)
         return jsonify({"error": "There was an error processing your request."}), 500
 
+# Run the app with host 0.0.0.0 and dynamic port
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Use port from environment or default to 5000
+    app.run(host="0.0.0.0", port=port, debug=True)
