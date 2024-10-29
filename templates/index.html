@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Management Tool</title>
+    <!-- Link to the CSS file in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header with Practice Logo -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Practice Logo" id="practice-logo">
+        <h1>Diabetes Management Assistant</h1>
+    </header>
+
+    <!-- Input Form for Patient Data -->
+    <section id="input-section">
+        <h2>Patient Information</h2>
+        <form id="patient-form">
+            <label for="hba1c">HbA1c Level (mmol/mol):</label>
+            <input type="number" id="hba1c" name="hba1c" value="48" required>
+
+            <label for="medications">Current Medications:</label>
+            <input type="text" id="medications" name="medications" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Response Display Section -->
+    <section id="response-section">
+        <h2>Response</h2>
+        <div id="response-output"></div>
+    </section>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
